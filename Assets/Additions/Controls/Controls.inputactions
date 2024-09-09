@@ -1,0 +1,51 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "Main",
+            "id": "76f05ce2-46f6-415f-a965-1b126eedf05d",
+            "actions": [
+                {
+                    "name": "ChangeRotation",
+                    "type": "Button",
+                    "id": "aefcb3cd-203b-4e39-b024-6ff70bd835b4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c40d2df3-03de-462f-abad-d74740c99bec",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse + Space Control",
+                    "action": "ChangeRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0b0652d3-9b7a-4662-a979-e612d649109f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse + Space Control",
+                    "action": "ChangeRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Mouse + Space Control",
+            "bindingGroup": "Mouse + Space Control",
+            "devices": []
+        }
+    ]
+}
