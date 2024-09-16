@@ -1,16 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class OnTriggerDeath : MonoBehaviour
 {
+    private TextMeshPro _points;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("sda;skdflj");
         if (collision.gameObject.layer == LayerMask.NameToLayer("PlayerDamagable"))
         {
             Destroy(gameObject);
-            Debug.Log("weoowekrowek");
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Coins"))
+        {
+            _points.text = Convert.ToString(int.Parse(_points.text) + 1);
         }
     }
 }

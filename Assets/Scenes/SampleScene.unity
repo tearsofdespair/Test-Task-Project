@@ -788,8 +788,7 @@ MonoBehaviour:
   - {fileID: 1131719184}
   - {fileID: 1634934350}
   TimeToSpawn: 3
-  EnemyLifeTime: 4
-  Destroyer: {fileID: 0}
+  Destroyer: {fileID: 1603063509}
 --- !u!4 &1281364240
 Transform:
   m_ObjectHideFlags: 0
