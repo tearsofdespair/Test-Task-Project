@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class OnTriggerDeath : MonoBehaviour
+public class PlayerTriggers : MonoBehaviour
 {
     private TextMeshPro _points;
 
@@ -12,7 +13,7 @@ public class OnTriggerDeath : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("PlayerDamagable"))
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene(0);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Coins"))
         {
