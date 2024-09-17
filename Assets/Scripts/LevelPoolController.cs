@@ -16,16 +16,16 @@ public class LevelPoolController : MonoBehaviour
     private void Awake()
     {
         _lastLevel = _poolService.Spawn(_levels[1]);
-        _lastLevel.transform.position = new Vector3(-26.8f, 0, 11.45f);
+        _lastLevel.transform.position = new Vector3(-27f, -0.6f, 20);
         _preLastLevel = _poolService.Spawn(_levels[0]);
-        _preLastLevel.transform.position = new Vector3(0, 0, 11.45f);
+        _preLastLevel.transform.position = new Vector3(0, -0.6f, 20);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("NextLevel"))
         {
-            _newLevel = _poolService.Spawn(_levels[_random.Next(0, _levels.Count - 1)]);
+            _newLevel = _poolService.Spawn(_levels[_random.Next(0, _levels.Count)]);
             _newLevel.transform.position = SpawnPosition.position;
             _poolService.Despawn(_lastLevel);
             _lastLevel = _preLastLevel;
