@@ -454,9 +454,9 @@ Transform:
   - {fileID: 5522854640116219559}
   - {fileID: 3012277425815217983}
   - {fileID: 5544273451861393138}
-  - {fileID: 7665908248710007498}
   - {fileID: 1767239506787639314}
   - {fileID: 1193092118087391351}
+  - {fileID: 5054596833450371593}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &103266646302708901
@@ -583,7 +583,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1288124611668348114, guid: b306227fa00ecba4f8910a5c0fac10c2, type: 3}
   m_PrefabInstance: {fileID: 677273279826963648}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4221998088807383359
+--- !u!1001 &1644028273526137340
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -593,15 +593,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3041098173783925723, guid: 548e33aae2eb2b841b473685f4a19fbb, type: 3}
       propertyPath: m_Name
-      value: Coin (1)
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 5833650304383896565, guid: 548e33aae2eb2b841b473685f4a19fbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.26
+      value: 0.7895254
       objectReference: {fileID: 0}
     - target: {fileID: 5833650304383896565, guid: 548e33aae2eb2b841b473685f4a19fbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.41
+      value: 0.39304447
       objectReference: {fileID: 0}
     - target: {fileID: 5833650304383896565, guid: 548e33aae2eb2b841b473685f4a19fbb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -640,8 +640,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 548e33aae2eb2b841b473685f4a19fbb, type: 3}
---- !u!4 &7665908248710007498 stripped
+--- !u!4 &5054596833450371593 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5833650304383896565, guid: 548e33aae2eb2b841b473685f4a19fbb, type: 3}
-  m_PrefabInstance: {fileID: 4221998088807383359}
+  m_PrefabInstance: {fileID: 1644028273526137340}
   m_PrefabAsset: {fileID: 0}
