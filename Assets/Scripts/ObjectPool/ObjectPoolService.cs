@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class ObjectPoolService
 {
     private readonly PoolSettings _defaultSettings;
     private readonly Dictionary<GameObject, GameObjectPool> _poolsMap = new(32);
-    private readonly Dictionary<GameObject, GameObject> _spawnedGameObjectsMap = new(256);
+    private readonly Dictionary<GameObject, GameObject> _spawnedGameObjectsMap = new(256); 
 
     public IEnumerable<GameObject> SpawnedGameObjects => _spawnedGameObjectsMap.Keys;
 

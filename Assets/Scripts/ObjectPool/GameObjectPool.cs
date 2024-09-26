@@ -2,6 +2,7 @@ using System;
 using UnityEngine.Pool;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using Zenject;
 
 public class GameObjectPool : IDisposable
 {
@@ -9,6 +10,7 @@ public class GameObjectPool : IDisposable
     private readonly PoolSettings _settings;
     private readonly ObjectPool<GameObject> _pool;
     private readonly Transform _parent;
+   
 
     public GameObjectPool(GameObject prefab, PoolSettings settings)
     {
