@@ -389,11 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a78625e7710b574788e08abe611cb0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Levels:
-  - {fileID: 8501417899080342456, guid: 5bc6dc17c8a90e942b7dbf178fb4c43e, type: 3}
-  - {fileID: 8501417899080342456, guid: e899704123809164394227be5961ad5c, type: 3}
-  - {fileID: 8501417899080342456, guid: ace81eb0d55ba884098c016100bac78b, type: 3}
-  SpawnPosition: {fileID: 958280795}
+  Config: {fileID: 11400000, guid: bb74aeaf72f21c441b285e472ed50b31, type: 2}
 --- !u!1 &1050514896
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,9 +980,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0522a98872c3dbe4c89a4864ce739427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 7
-  RotationSpeed: 110
-  PointsText: {fileID: 0}
+  PlayerConfig: {fileID: 11400000, guid: c5f400cc64ca9ff47bc758e0c35dcd3d, type: 2}
+  PointsText: {fileID: 1050514898}
 --- !u!4 &2119600134
 Transform:
   m_ObjectHideFlags: 0

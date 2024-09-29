@@ -11,10 +11,10 @@ public class PlayerMovement : MonoBehaviour
     private Controls controls;
 
     [Inject]
-    public void Constract(List<float> floats)
+    public void Constract(PlayerConfig playerConfig)
     {
-        _speed = floats[0];
-        _rotationSpeed = floats[1];
+        _speed = playerConfig.MoveSpeed;
+        _rotationSpeed = playerConfig.RotationSpeed;
     }
 
     private void Awake()

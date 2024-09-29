@@ -14,10 +14,10 @@ public class LevelPoolController : MonoBehaviour
     private Transform _spawnPosition;
 
     [Inject]
-    public void Constsruct(List<GameObject> levels, Transform spawnPosition)
+    public void Constsruct(ObjectPoolConfig objectPoolConfig, Transform spawnPoint)
     {
-        _levels = levels;
-        _spawnPosition = spawnPosition;
+        _levels = objectPoolConfig.Levels;
+        _spawnPosition = spawnPoint;
     }
 
     private void Awake()
