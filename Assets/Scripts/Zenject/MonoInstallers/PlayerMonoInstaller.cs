@@ -11,7 +11,7 @@ public class PlayerMonoInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        List<float> speeds = new List<float>() { MoveSpeed, RotationSpeed};
+        List<float> speeds = new List<float>() { MoveSpeed, RotationSpeed };
 
         Container.Bind<List<float>>().FromInstance(speeds).NonLazy();
         Container.Bind<TextMeshProUGUI>().FromInstance(PointsText).NonLazy();

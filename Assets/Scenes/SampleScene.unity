@@ -562,7 +562,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 2119600133}
-  - {fileID: 1048971440}
+  - {fileID: 0}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -984,9 +984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0522a98872c3dbe4c89a4864ce739427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 7
-  RotationSpeed: 110
-  PointsText: {fileID: 1050514898}
 --- !u!4 &2119600134
 Transform:
   m_ObjectHideFlags: 0
