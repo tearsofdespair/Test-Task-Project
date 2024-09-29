@@ -5,10 +5,18 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 public class PlayerTriggers : MonoBehaviour
 {
-    public TextMeshProUGUI PointsText;
+    private TextMeshProUGUI _pointsText;
+
+
+    [Inject]
+    public void Constract(TextMeshProUGUI pointsText)
+    {
+        _pointsText = pointsText;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,7 +26,7 @@ public class PlayerTriggers : MonoBehaviour
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Coins"))
         {
-            PointsText.text = Convert.ToString(int.Parse(PointsText.text) + 1);
+            _pointsText.text = Convert.ToString(int.Parse(_pointsText.text) + 1);
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("CoinCheck"))

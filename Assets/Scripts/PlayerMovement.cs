@@ -1,12 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] public float Speed;
-    [SerializeField] public float RotationSpeed;
+    private float _speed;
+    private float _rotationSpeed;
     private Controls controls;
+
+    [Inject]
+    public void Constract(List<float> floats)
+    {
+        _speed = floats[0];
+        _rotationSpeed = floats[1];
+    }
 
     private void Awake()
     {
@@ -15,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        this.transform.position += transform.right * Speed * Time.deltaTime;
+        this.transform.position += transform.right * _speed * Time.deltaTime;
 
         if (controls.Main.ChangeRotation.IsPressed())
         {
@@ -30,12 +39,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void RotateActive()
     {
-        transform.Rotate(new Vector3(0, 0, 1) * RotationSpeed * Time.deltaTime);
+        transform.Rotate(new Vector3(0, 0, 1) * _rotationSpeed * Time.deltaTime);
     }
 
     private void RotateIdle()
     {
-        transform.Rotate(new Vector3(0, 0, -1) * RotationSpeed * Time.deltaTime);
+        transform.Rotate(new Vector3(0, 0, -1) * _rotationSpeed * Time.deltaTime);
     }
 
     private void OnEnable()
