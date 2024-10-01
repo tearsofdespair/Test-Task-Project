@@ -31,6 +31,19 @@ public class ObjectPoolService
         return instance;
     }
 
+    public void AddPool(GameObject gameObject,GameObjectPool pool)
+    {
+        _poolsMap.Add(gameObject, pool);
+    }
+
+    public void AddPools(Dictionary<GameObject, GameObjectPool> pools)
+    {
+        foreach(KeyValuePair<GameObject, GameObjectPool> pair in pools)
+        {
+            _poolsMap.Add(pair.Key, pair.Value);
+        }
+    }
+
     public void Despawn(Component prefab)
     {
         Despawn(prefab.gameObject);

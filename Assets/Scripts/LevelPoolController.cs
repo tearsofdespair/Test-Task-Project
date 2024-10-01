@@ -5,7 +5,7 @@ using Zenject;
 
 public class LevelPoolController : MonoBehaviour
 {
-    private ObjectPoolService _poolService = new ObjectPoolService(new PoolSettings());
+    private ObjectPoolService _poolService;
     private List<GameObject> _levels;
     private System.Random _random = new System.Random();
     private GameObject _lastLevel;
@@ -14,10 +14,12 @@ public class LevelPoolController : MonoBehaviour
     private Transform _spawnPosition;
 
     [Inject]
-    public void Constsruct(ObjectPoolConfig objectPoolConfig, Transform spawnPoint)
+    public void Constsruct(ObjectPoolService service, ObjectPoolConfig objectPoolConfig, Transform spawnPoint, Dictionary<GameObject, GameObjectPool> objectPools)
     {
+        _poolService = service;
         _levels = objectPoolConfig.Levels;
         _spawnPosition = spawnPoint;
+        _poolService.AddPools(objectPools);
     }
 
     private void Awake()

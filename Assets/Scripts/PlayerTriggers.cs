@@ -34,7 +34,6 @@ public class PlayerTriggers : MonoBehaviour
             Coin script = collision.gameObject.GetComponentInParent<Coin>();
             Debug.Log(script.ToString());
             script.enabled = true;
-            script.Player = transform;
         }
     }
 }
