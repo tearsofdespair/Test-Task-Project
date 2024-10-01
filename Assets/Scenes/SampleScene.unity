@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: bb74aeaf72f21c441b285e472ed50b31, type: 2}
+  SpawnPosition: {fileID: 958280795}
 --- !u!1 &1050514896
 GameObject:
   m_ObjectHideFlags: 0
