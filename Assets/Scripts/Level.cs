@@ -5,8 +5,9 @@ using Zenject;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] public Coin Coins;
-    CoinConfig CoinConfig;
+    [SerializeField] public List<Coin> Coins;
+    [Inject] CoinConfig CoinConfig;
+    private bool isSetted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +22,15 @@ public class Level : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        if (!isSetted)
+        {
+            foreach (Coin coin in Coins)
+            {
+                coin.config = CoinConfig;
+                coin.enabled = true;
+            }
+        }
     }
 }

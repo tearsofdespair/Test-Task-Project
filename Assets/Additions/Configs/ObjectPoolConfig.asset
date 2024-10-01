@@ -16,4 +16,3 @@ MonoBehaviour:
   - {fileID: 8501417899080342456, guid: 5bc6dc17c8a90e942b7dbf178fb4c43e, type: 3}
   - {fileID: 8501417899080342456, guid: e899704123809164394227be5961ad5c, type: 3}
   - {fileID: 8501417899080342456, guid: ace81eb0d55ba884098c016100bac78b, type: 3}
-  LevelSpawnPoint: {fileID: 0}

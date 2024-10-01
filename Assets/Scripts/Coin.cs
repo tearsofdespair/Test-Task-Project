@@ -5,7 +5,7 @@ using Zenject;
 
 public class Coin : MonoBehaviour
 {
-    [Inject] public CoinConfig config;
+    public CoinConfig config;
 
     private void Update()
     {
