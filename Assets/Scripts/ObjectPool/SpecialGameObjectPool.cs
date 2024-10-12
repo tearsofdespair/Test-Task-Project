@@ -21,6 +21,7 @@ public class SpecialGameObjectPool<T> where T : Component
             Create, OnGet, OnRelease, OnDestroy,
             _settings.CollectionCheck, _settings.Capacity, _settings.MaxSize);
         _parent = new GameObject($"GameObject Pool <{_prefab.name}>").transform;
+        _container = diContainer;
     }
 
     public int MaxSize => _settings.MaxSize;

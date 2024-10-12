@@ -13,6 +13,7 @@ public class CoinsMonoinstaller : MonoInstaller
     {
         CoinConfig coinConfig = new CoinConfig(CoinSpeed, PlayerPosition);
 
-        Container.Bind<CoinConfig>().AsSingle().WithArguments(CoinSpeed, PlayerPosition).NonLazy();
+        /*Container.Bind<CoinConfig>().AsSingle().WithArguments(CoinSpeed, PlayerPosition).NonLazy();*/
+        Container.Bind<CoinConfig>().FromInstance(coinConfig).NonLazy();
     }
 }

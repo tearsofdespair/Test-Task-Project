@@ -6,13 +6,18 @@ using Zenject;
 public class Level : MonoBehaviour
 {
     [SerializeField] public List<Coin> Coins;
-    [Inject] CoinConfig CoinConfig;
+    private CoinConfig _coinConfig;
     private bool isSetted = false;
 
+    [Inject]
+    public void Construct(CoinConfig coinConfig)
+    {
+        _coinConfig = coinConfig;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        if(CoinConfig == null)
+        if(_coinConfig == null)
         {
             Debug.Log("nifiga netu");
         }
@@ -28,7 +33,7 @@ public class Level : MonoBehaviour
         {
             foreach (Coin coin in Coins)
             {
-                coin.config = CoinConfig;
+                coin.config = _coinConfig;
                 coin.enabled = true;
             }
             isSetted = true;
