@@ -20,17 +20,17 @@ public class SpecialObjectPoolService<D> where D : Component
         _diContainer = diContainer;
     }
 
-    public T Spawn<T>(T prefab) where T : Component
+    public D Spawn(D prefab)
     {
-        GameObject instance = Spawn(prefab.gameObject);
-        return instance.GetComponent<T>();
+        GameObject instance = SpawnObject(prefab);
+        return instance.GetComponent<D>();
     }
 
-    public GameObject Spawn(GameObject prefab)
+    public GameObject SpawnObject(D prefab)
     {
-        GameObjectPool pool = GetOrCreatePool(prefab);
+        SpecialGameObjectPool<D> pool = GetOrCreatePool(prefab);
         GameObject instance = pool.Get();
-        _spawnedGameObjectsMap.Add(instance, prefab);
+        _spawnedGameObjectsMap.Add(instance, prefab.gameObject);
         return instance;
     }
 
@@ -67,7 +67,7 @@ public class SpecialObjectPoolService<D> where D : Component
 
     public SpecialGameObjectPool<D> CreatePool(D prefab, PoolSettings settings = null)
     {
-        var newPool = new SpecialGameObjectPool<D>(prefab, settings ?? _defaultSettings, );
+        var newPool = new SpecialGameObjectPool<D>(prefab, settings ?? _defaultSettings, _diContainer);
         _poolsMap.Add(prefab.gameObject, newPool);
         return newPool;
     }
