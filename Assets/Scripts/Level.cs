@@ -31,6 +31,7 @@ public class Level : MonoBehaviour
                 coin.config = CoinConfig;
                 coin.enabled = true;
             }
+            isSetted = true;
         }
     }
 }
