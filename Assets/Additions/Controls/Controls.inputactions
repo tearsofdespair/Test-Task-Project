@@ -6,9 +6,9 @@
             "id": "76f05ce2-46f6-415f-a965-1b126eedf05d",
             "actions": [
                 {
-                    "name": "ChangeRotation",
+                    "name": "Fly",
                     "type": "Button",
-                    "id": "aefcb3cd-203b-4e39-b024-6ff70bd835b4",
+                    "id": "19eac75f-df48-426a-b352-a1e1eb0ff8d7",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -18,23 +18,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "c40d2df3-03de-462f-abad-d74740c99bec",
-                    "path": "<Mouse>/leftButton",
+                    "id": "da3fda08-0e0c-46d8-80fe-45c3cb3c6888",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mouse + Space Control",
-                    "action": "ChangeRotation",
+                    "groups": "",
+                    "action": "Fly",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "0b0652d3-9b7a-4662-a979-e612d649109f",
-                    "path": "<Keyboard>/space",
+                    "id": "a196c5bb-2033-42ff-b09a-2f666cc03907",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mouse + Space Control",
-                    "action": "ChangeRotation",
+                    "groups": "",
+                    "action": "Fly",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -28,9 +28,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             ""id"": ""76f05ce2-46f6-415f-a965-1b126eedf05d"",
             ""actions"": [
                 {
-                    ""name"": ""ChangeRotation"",
+                    ""name"": ""Fly"",
                     ""type"": ""Button"",
-                    ""id"": ""aefcb3cd-203b-4e39-b024-6ff70bd835b4"",
+                    ""id"": ""19eac75f-df48-426a-b352-a1e1eb0ff8d7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -40,23 +40,23 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""c40d2df3-03de-462f-abad-d74740c99bec"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""da3fda08-0e0c-46d8-80fe-45c3cb3c6888"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse + Space Control"",
-                    ""action"": ""ChangeRotation"",
+                    ""groups"": """",
+                    ""action"": ""Fly"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0b0652d3-9b7a-4662-a979-e612d649109f"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""a196c5bb-2033-42ff-b09a-2f666cc03907"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse + Space Control"",
-                    ""action"": ""ChangeRotation"",
+                    ""groups"": """",
+                    ""action"": ""Fly"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -73,7 +73,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
 }");
         // Main
         m_Main = asset.FindActionMap("Main", throwIfNotFound: true);
-        m_Main_ChangeRotation = m_Main.FindAction("ChangeRotation", throwIfNotFound: true);
+        m_Main_Fly = m_Main.FindAction("Fly", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -135,12 +135,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     // Main
     private readonly InputActionMap m_Main;
     private List<IMainActions> m_MainActionsCallbackInterfaces = new List<IMainActions>();
-    private readonly InputAction m_Main_ChangeRotation;
+    private readonly InputAction m_Main_Fly;
     public struct MainActions
     {
         private @Controls m_Wrapper;
         public MainActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ChangeRotation => m_Wrapper.m_Main_ChangeRotation;
+        public InputAction @Fly => m_Wrapper.m_Main_Fly;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -150,16 +150,16 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_MainActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_MainActionsCallbackInterfaces.Add(instance);
-            @ChangeRotation.started += instance.OnChangeRotation;
-            @ChangeRotation.performed += instance.OnChangeRotation;
-            @ChangeRotation.canceled += instance.OnChangeRotation;
+            @Fly.started += instance.OnFly;
+            @Fly.performed += instance.OnFly;
+            @Fly.canceled += instance.OnFly;
         }
 
         private void UnregisterCallbacks(IMainActions instance)
         {
-            @ChangeRotation.started -= instance.OnChangeRotation;
-            @ChangeRotation.performed -= instance.OnChangeRotation;
-            @ChangeRotation.canceled -= instance.OnChangeRotation;
+            @Fly.started -= instance.OnFly;
+            @Fly.performed -= instance.OnFly;
+            @Fly.canceled -= instance.OnFly;
         }
 
         public void RemoveCallbacks(IMainActions instance)
@@ -188,6 +188,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     }
     public interface IMainActions
     {
-        void OnChangeRotation(InputAction.CallbackContext context);
+        void OnFly(InputAction.CallbackContext context);
     }
 }
